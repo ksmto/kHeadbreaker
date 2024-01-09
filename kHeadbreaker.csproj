@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED23EEA2-DAE5-4B9A-821F-5BFF659DBD49}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>kHeadbreaker</RootNamespace>
+    <AssemblyName>kHeadbreaker</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Crest">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Crest.dll</HintPath>
+    </Reference>
+    <Reference Include="EasyButtons">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\EasyButtons.dll</HintPath>
+    </Reference>
+    <Reference Include="IngameDebugConsole.Runtime">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\IngameDebugConsole.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="LIV">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\LIV.dll</HintPath>
+    </Reference>
+    <Reference Include="Meta.VoiceSDK.Mic.Common">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Meta.VoiceSDK.Mic.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Meta.VoiceSDK.Mic.Other">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Meta.VoiceSDK.Mic.Other.dll</HintPath>
+    </Reference>
+    <Reference Include="modio.UI">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\modio.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="modio.UnityPlugin">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\modio.UnityPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="NavMeshComponents">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\NavMeshComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.UnityConverters">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Newtonsoft.Json.UnityConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.UnityConverters.Addressables">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Newtonsoft.Json.UnityConverters.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.AudioManager">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Oculus.AudioManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.LipSync">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Oculus.LipSync.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.Platform">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Oculus.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.Spatializer">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Oculus.Spatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.Voice.Demo">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Oculus.Voice.Demo.dll</HintPath>
+    </Reference>
+    <Reference Include="Oculus.VR">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Oculus.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="PICO.Platform">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\PICO.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Pico.Spatializer">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Pico.Spatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Pico.Spatializer.Example">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Pico.Spatializer.Example.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.CompatibilityLayer">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Sirenix.OdinInspector.CompatibilityLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Sirenix.Serialization.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="SteamVR">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\SteamVR.dll</HintPath>
+    </Reference>
+    <Reference Include="SteamVR_Actions">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\SteamVR_Actions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThunderRoad">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\ThunderRoad.dll</HintPath>
+    </Reference>
+    <Reference Include="ThunderRoad.Environment">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\ThunderRoad.Environment.dll</HintPath>
+    </Reference>
+    <Reference Include="ThunderRoad.EventLinker">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\ThunderRoad.EventLinker.dll</HintPath>
+    </Reference>
+    <Reference Include="ThunderRoad.Manikin">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\ThunderRoad.Manikin.dll</HintPath>
+    </Reference>
+    <Reference Include="ThunderRoad.MaterialInstance">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\ThunderRoad.MaterialInstance.dll</HintPath>
+    </Reference>
+    <Reference Include="ThunderRoad.PointCache">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\ThunderRoad.PointCache.dll</HintPath>
+    </Reference>
+    <Reference Include="ThunderRoad.Reflection">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\ThunderRoad.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="ThunderRoad.Reveal">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\ThunderRoad.Reveal.dll</HintPath>
+    </Reference>
+    <Reference Include="ThunderRoad.Utilities">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\ThunderRoad.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Animation.Rigging.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Formats.Fbx.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.011">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.InternalAPIEngineBridge.011.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Jobs">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Jobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.ARKitFaceCapture">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.ARKitFaceCapture.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.CompanionApp">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.CompanionApp.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.Ltc">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.Ltc.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.Mocap">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.Mocap.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.Networking">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.Ntp">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.Ntp.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.Rendering">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.Rendering.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.TransformCapture">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.TransformCapture.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.VideoStreaming.Server">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.VideoStreaming.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.LiveCapture.VirtualCamera">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.LiveCapture.VirtualCamera.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.MemoryProfiler">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.MemoryProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Polybrush">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Polybrush.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Recorder.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Splines">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Splines.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Subsystem.Registration">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Subsystem.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.CoreUtils">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.XR.CoreUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.XR.Interaction.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Management">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.XR.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.MockHMD">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.XR.MockHMD.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Oculus">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.XR.Oculus.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenVR">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.XR.OpenVR.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.PICO">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\Unity.XR.PICO.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.NVIDIAModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.NVIDIAModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UIElementsNativeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="VoiceSDK.Dictation.Runtime">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\VoiceSDK.Dictation.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="VoiceSDK.Runtime">
+      <HintPath>..\_Blade &amp; Sorcery\_Blade &amp; Sorcery Dependencies\VoiceSDK.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Script.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
