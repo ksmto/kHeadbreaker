@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using ThunderRoad;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
@@ -78,14 +79,17 @@ namespace kHeadbreaker {
         private void Ragdoll_OnSliceEvent(RagdollPart ragdollPart, EventTime eventTime) {
             try {
                 if (eventTime == EventTime.OnEnd && ragdollPart.type is RagdollPart.Type.Head) {
-                    foreach (var handle in ragdollPart.handles) {
-                        if (handle != null) {
-                            foreach (var handler in handle.handlers) {
-                                handler?.UnGrab(false);
+                    if (ragdollPart.handles != null && ragdollPart.handles.Count > 0) {
+                        foreach (var handle in ragdollPart.handles) {
+                            if (handle != null) {
+                                foreach (var handler in handle.handlers) {
+                                    handler?.UnGrab(false);
+                                }
                             }
                         }
                     }
-                    Object.Destroy(ragdollPart.gameObject);
+                    
+                    ragdollPart.gameObject.SetActive(false);
                     ragdollPart.ragdoll.OnSliceEvent -= Ragdoll_OnSliceEvent;
                 }
             } catch (Exception e) {
@@ -110,12 +114,19 @@ namespace kHeadbreaker {
 
         private void InstantiateGameObject(string prefabPath, Vector3 position, Action<GameObject> callback) {
             try {
-                GameObject go1 = null;
-                Catalog.InstantiateAsync(prefabPath, position, Quaternion.identity, null, go => { go1 = go; }, prefabPath);
-                callback?.Invoke(go1);
+                GameManager.local.StartCoroutine(InstantiateGameObjectRoutine(prefabPath, position, callback));
             } catch (Exception e) {
                 Debug.LogException(e);
             }
+        }
+
+        private IEnumerator InstantiateGameObjectRoutine(string prefabPath, Vector3 position, Action<GameObject> callback) {
+            GameObject go1 = null;
+            Catalog.InstantiateAsync(prefabPath, position, Quaternion.identity, null, go => { go1 = go; }, prefabPath);
+
+            yield return new WaitUntil(() => go1 != null);
+
+            callback?.Invoke(go1);
         }
 
         private void SpawnEffects(Vector3 position) {
