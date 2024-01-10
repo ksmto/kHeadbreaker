@@ -64,10 +64,6 @@ namespace kHeadbreaker {
                     SpawnSkullFragments(position, force);
 
                     creature.Kill();
-                    foreach (var module in creature.brain.instance.modules) {
-                        module.Unload();
-                        module.OnBrainStop();
-                    }
                     hitPart.TrySlice();
                     hitPart.ragdoll.OnSliceEvent += Ragdoll_OnSliceEvent;
                 }
@@ -78,20 +74,22 @@ namespace kHeadbreaker {
 
         private void Ragdoll_OnSliceEvent(RagdollPart ragdollPart, EventTime eventTime) {
             try {
-                if (eventTime == EventTime.OnEnd && ragdollPart.type is RagdollPart.Type.Head) {
-                    if (ragdollPart.handles != null && ragdollPart.handles.Count > 0) {
-                        foreach (var handle in ragdollPart.handles) {
-                            if (handle != null) {
-                                foreach (var handler in handle.handlers) {
-                                    handler?.UnGrab(false);
-                                }
+                if (ragdollPart == null || ragdollPart.type != RagdollPart.Type.Head || eventTime != EventTime.OnEnd) {
+                    return;
+                }
+
+                if (ragdollPart.handles != null && ragdollPart.handles.Count > 0) {
+                    foreach (var handle in ragdollPart.handles) {
+                        if (handle != null) {
+                            foreach (var handler in handle.handlers) {
+                                handler?.UnGrab(false);
                             }
                         }
                     }
-                    
-                    ragdollPart.gameObject.SetActive(false);
-                    ragdollPart.ragdoll.OnSliceEvent -= Ragdoll_OnSliceEvent;
                 }
+
+                ragdollPart.gameObject.SetActive(false);
+                ragdollPart.ragdoll.OnSliceEvent -= Ragdoll_OnSliceEvent;
             } catch (Exception e) {
                 Debug.LogException(e);
             }
